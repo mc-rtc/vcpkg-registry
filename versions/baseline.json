@@ -1,7 +1,7 @@
 {
   "default":
   {
-    "rbdyn": { "baseline": "1.4.0", "port-version": 0 },
+    "rbdyn": { "baseline": "1.4.0", "port-version": 1 },
     "spacevecalg": { "baseline": "1.2.0", "port-version": 0 }
   }
 }

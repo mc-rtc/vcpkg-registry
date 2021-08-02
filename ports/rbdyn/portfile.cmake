@@ -13,6 +13,7 @@ vcpkg_extract_source_archive_ex(
 vcpkg_configure_cmake(
     SOURCE_PATH ${SOURCE_PATH}
     PREFER_NINJA
+    NO_CHARSET_FLAG
     OPTIONS
       -DBUILD_TESTING=OFF
       -DPYTHON_BINDING=OFF
