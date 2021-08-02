@@ -86,6 +86,7 @@ jobs:
     - name: Setup vcpkg-configuration.json
       shell: bash
       run: |
+        GITHUB_WORKSPACE=$(echo "${{ github.workspace }}" | sed -e's/\\/\\\\/g')
         cat <<EOF | tee vcpkg/vcpkg-configuration.json
         {
           "registries":
@@ -93,7 +94,7 @@ jobs:
             {
               "kind": "git",
               "baseline": "${{ github.sha }}",
-              "repository": "${{ toJSON(github.workspace) }}",
+              "repository": "${GITHUB_WORKSPACE}",
               "packages": [ "spacevecalg" ]
             }
           ]
