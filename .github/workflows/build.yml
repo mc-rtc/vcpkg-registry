@@ -77,7 +77,7 @@ jobs:
     - name: Bootstrap vcpkg (macOS)
       if: startsWith(runner.os, 'macOS')
       run: |
-        brew install gfortran
+        brew unlink gcc && brew link gcc
         if $BOOTSTRAP_VCPKG
         then
           cd vcpkg
