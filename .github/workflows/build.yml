@@ -106,6 +106,14 @@ jobs:
         ./vcpkg/vcpkg remove --outdated --recurse
         echo "JRL_PORT=state-observation" >> $GITHUB_ENV
         ./vcpkg/vcpkg install --feature-flags=registries --debug state-observation
+        echo "JRL_PORT=tasks" >> $GITHUB_ENV
+        ./vcpkg/vcpkg install --feature-flags=registries --debug tasks
+        echo "JRL_PORT=eigen-quadprog" >> $GITHUB_ENV
+        ./vcpkg/vcpkg install --feature-flags=registries --debug eigen-quadprog
+        echo "JRL_PORT=mc-rbdyn-urdf" >> $GITHUB_ENV
+        ./vcpkg/vcpkg install --feature-flags=registries --debug mc-rbdyn-urdf
+        echo "JRL_PORT=mc-rtc-data" >> $GITHUB_ENV
+        ./vcpkg/vcpkg install --feature-flags=registries --debug mc-rtc-data
         rm -rf $VCPKG_ROOT/buildtrees
         rm -rf $VCPKG_ROOT/packages
         rm -rf $VCPKG_ROOT/downloads
