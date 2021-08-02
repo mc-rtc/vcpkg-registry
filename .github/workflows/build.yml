@@ -56,23 +56,33 @@ jobs:
           echo "VCPKG_DEFAULT_TRIPLET=x64-windows" >> $GITHUB_ENV
         fi
     - name: Bootstrap vcpkg (Windows)
-      if: startsWith(runner.os, 'Windows') && env.BOOTSTRAP_VCPKG
+      if: startsWith(runner.os, 'Windows')
+      shell: bash
       run: |
-        cd vcpkg
-        .\bootstrap-vcpkg.bat
+        if $BOOTSTRAP_VCPKG
+        then
+          cd vcpkg
+          ./bootstrap-vcpkg.bat
+        fi
     - name: Bootstrap vcpkg (Linux)
-      if: startsWith(runner.os, 'Linux') && env.BOOTSTRAP_VCPKG
+      if: startsWith(runner.os, 'Linux')
       run: |
         export CXX=g++ # Enforce default g++ selection
         sudo apt-get install -y python3-setuptools
-        cd vcpkg
-        ./bootstrap-vcpkg.sh
+        if $BOOTSTRAP_VCPKG
+        then
+          cd vcpkg
+          ./bootstrap-vcpkg.sh
+        fi
     - name: Bootstrap vcpkg (macOS)
-      if: startsWith(runner.os, 'macOS') && env.BOOTSTRAP_VCPKG
+      if: startsWith(runner.os, 'macOS')
       run: |
         brew install gfortran
-        cd vcpkg
-        ./bootstrap-vcpkg.sh -allowAppleClang
+        if $BOOTSTRAP_VCPKG
+        then
+          cd vcpkg
+          ./bootstrap-vcpkg.sh -allowAppleClang
+        fi
     - name: Setup vcpkg-configuration.json
       shell: bash
       run: |
