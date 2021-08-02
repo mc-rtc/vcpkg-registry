@@ -106,6 +106,7 @@ jobs:
         echo "JRL_PORT=rbdyn" >> $GITHUB_ENV
         ./vcpkg/vcpkg remove --outdated --recurse
         ./vcpkg/vcpkg install --feature-flags=registries --debug rbdyn
+        ./vcpkg/vcpkg upgrade
     - name: Show logs
       if: failure()
       shell: bash
