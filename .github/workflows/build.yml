@@ -95,7 +95,7 @@ jobs:
               "kind": "git",
               "baseline": "${{ github.sha }}",
               "repository": "${GITHUB_WORKSPACE}",
-              "packages": [ "spacevecalg", "rbdyn", "eigen-qld", "sch-core" ]
+              "packages": [ "spacevecalg", "rbdyn", "eigen-qld", "sch-core", "tasks" ]
             }
           ]
         }
@@ -103,9 +103,9 @@ jobs:
     - name: Install
       shell: bash
       run: |
-        echo "JRL_PORT=sch-core" >> $GITHUB_ENV
+        echo "JRL_PORT=tasks" >> $GITHUB_ENV
         ./vcpkg/vcpkg remove --outdated --recurse
-        ./vcpkg/vcpkg install --feature-flags=registries --debug sch-core
+        ./vcpkg/vcpkg install --feature-flags=registries --debug tasks
     - name: Show logs
       if: failure()
       shell: bash
