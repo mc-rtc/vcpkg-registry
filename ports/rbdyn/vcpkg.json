@@ -1,0 +1,14 @@
+{
+  "name": "rbdyn",
+  "version-string": "1.4.0",
+  "homepage": "https://github.com/jrl-umi3218/RBDyn",
+  "description": "Model the dynamics of rigid body systems",
+  "dependencies": [
+    "spacevecalg",
+    "yaml-cpp",
+    "tinyxml2",
+    "boost-filesystem",
+    "boost-math",
+    "boost-variant"
+  ]
+}

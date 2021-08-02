@@ -95,16 +95,16 @@ jobs:
               "kind": "git",
               "baseline": "${{ github.sha }}",
               "repository": "${GITHUB_WORKSPACE}",
-              "packages": [ "spacevecalg" ]
+              "packages": [ "spacevecalg", "rbdyn" ]
             }
           ]
         }
         EOF
-    - name: Install SpaceVecAlg
+    - name: Install RBDyn
       shell: bash
       run: |
-        echo "JRL_PORT=spacevecalg" >> $GITHUB_ENV
-        ./vcpkg/vcpkg install --feature-flags=registries --debug spacevecalg
+        echo "JRL_PORT=rbdyn" >> $GITHUB_ENV
+        ./vcpkg/vcpkg install --feature-flags=registries --debug rbdyn
     - name: Show logs
       if: failure()
       shell: bash
