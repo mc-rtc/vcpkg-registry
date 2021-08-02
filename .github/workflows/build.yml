@@ -35,23 +35,40 @@ jobs:
     - name: Clone vcpkg
       shell: bash
       run: |
-        git clone --recursive https://github.com/microsoft/vcpkg || true
-        cd vcpkg && git pull
+        if [ ! -d vcpkg ]
+        then
+          echo "BOOTSTRAP_VCPKG=true" >> $GITHUB_ENV
+          git clone --recursive https://github.com/microsoft/vcpkg || true
+        else
+          cd vcpkg
+          old_head=`git rev-parse HEAD`
+          git pull
+          new_head=`git rev-parse HEAD`
+          if [ $old_head = $new_head ]
+          then
+            echo "BOOTSTRAP_VCPKG=false" >> $GITHUB_ENV
+          else
+            echo "BOOTSTRAP_VCPKG=true" >> $GITHUB_ENV
+          fi
+        fi
+        if ${{ startsWith(runner.os, 'Windows') }}
+        then
+          echo "VCPKG_DEFAULT_TRIPLET=x64-windows" >> $GITHUB_ENV
+        fi
     - name: Bootstrap vcpkg (Windows)
-      if: startsWith(runner.os, 'Windows')
+      if: startsWith(runner.os, 'Windows') && env.BOOTSTRAP_VCPKG
       run: |
         cd vcpkg
         .\bootstrap-vcpkg.bat
-        echo "VCPKG_DEFAULT_TRIPLET=x64-windows" >> $GITHUB_ENV
     - name: Bootstrap vcpkg (Linux)
-      if: startsWith(runner.os, 'Linux')
+      if: startsWith(runner.os, 'Linux') && env.BOOTSTRAP_VCPKG
       run: |
         export CXX=g++ # Enforce default g++ selection
         sudo apt-get install -y python3-setuptools
         cd vcpkg
         ./bootstrap-vcpkg.sh
     - name: Bootstrap vcpkg (macOS)
-      if: startsWith(runner.os, 'macOS')
+      if: startsWith(runner.os, 'macOS') && env.BOOTSTRAP_VCPKG
       run: |
         brew install gfortran
         cd vcpkg
