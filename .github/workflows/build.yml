@@ -95,18 +95,17 @@ jobs:
               "kind": "git",
               "baseline": "${{ github.sha }}",
               "repository": "${GITHUB_WORKSPACE}",
-              "packages": [ "spacevecalg", "rbdyn" ]
+              "packages": [ "spacevecalg", "rbdyn", "eigen-qld" ]
             }
           ]
         }
         EOF
-    - name: Install RBDyn
+    - name: Install
       shell: bash
       run: |
-        echo "JRL_PORT=rbdyn" >> $GITHUB_ENV
+        echo "JRL_PORT=eigen-qld" >> $GITHUB_ENV
         ./vcpkg/vcpkg remove --outdated --recurse
-        ./vcpkg/vcpkg install --feature-flags=registries --debug rbdyn
-        ./vcpkg/vcpkg upgrade
+        ./vcpkg/vcpkg install --feature-flags=registries --debug eigen-qld
     - name: Show logs
       if: failure()
       shell: bash

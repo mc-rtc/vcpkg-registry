@@ -1,0 +1,13 @@
+{
+  "name": "eigen-qld",
+  "version-string": "1.2.1",
+  "homepage": "https://github.com/jrl-umi3218/eigen-qld",
+  "description": "QLD QP solver through Eigen3 library",
+  "dependencies": [
+    "eigen3",
+    {
+      "name": "vcpkg-gfortran",
+      "platform": "windows"
+    }
+  ]
+}
