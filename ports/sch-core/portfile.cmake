@@ -15,6 +15,7 @@ vcpkg_configure_cmake(
     PREFER_NINJA
     OPTIONS
       -DBUILD_TESTING=OFF
+      -DCMAKE_CXX_STANDARD=11
 )
 
 vcpkg_install_cmake()
