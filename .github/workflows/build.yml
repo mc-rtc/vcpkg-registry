@@ -29,9 +29,9 @@ jobs:
           !${{ env.VCPKG_ROOT }}/packages
           !${{ env.VCPKG_ROOT }}/downloads
         key: |
-          vcpkg-${{ matrix.os }}-${{ github.sha }}
+          vcpkg-1-${{ matrix.os }}-${{ github.sha }}
         restore-keys: |
-          vcpkg-${{ matrix.os }}-
+          vcpkg-1-${{ matrix.os }}-
     - name: Clone vcpkg
       shell: bash
       run: |
