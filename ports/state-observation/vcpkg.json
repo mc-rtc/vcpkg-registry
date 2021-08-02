@@ -1,0 +1,13 @@
+{
+  "name": "state-observation",
+  "version-string": "1.4.1",
+  "homepage": "https://github.com/jrl-umi3218/state-observation",
+  "description": "Describes interfaces for state observers, and implements some observers",
+  "dependencies": [
+    "boost-chrono",
+    "boost-system",
+    "boost-timer",
+    "eigen3"
+  ]
+}
+

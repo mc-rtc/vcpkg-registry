@@ -95,7 +95,7 @@ jobs:
               "kind": "git",
               "baseline": "${{ github.sha }}",
               "repository": "${GITHUB_WORKSPACE}",
-              "packages": [ "spacevecalg", "rbdyn", "eigen-qld", "sch-core", "tasks", "mc-rbdyn-urdf", "mc-rtc-data", "eigen-quadprog" ]
+              "packages": [ "spacevecalg", "rbdyn", "eigen-qld", "sch-core", "tasks", "mc-rbdyn-urdf", "mc-rtc-data", "eigen-quadprog", "state-observation" ]
             }
           ]
         }
@@ -103,9 +103,9 @@ jobs:
     - name: Install
       shell: bash
       run: |
-        echo "JRL_PORT=eigen-quadprog" >> $GITHUB_ENV
+        echo "JRL_PORT=state-observation" >> $GITHUB_ENV
         ./vcpkg/vcpkg remove --outdated --recurse
-        ./vcpkg/vcpkg install --feature-flags=registries --debug eigen-quadprog
+        ./vcpkg/vcpkg install --feature-flags=registries --debug state-observation
     - name: Show logs
       if: failure()
       shell: bash
