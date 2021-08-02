@@ -1,0 +1,7 @@
+{
+  "name": "mc-rtc-data",
+  "version-string": "1.0.4",
+  "homepage": "https://github.com/jrl-umi3218/mc_rtc_data",
+  "description": "Data files for environments and robots description for mc_rtc",
+  "dependencies": []
+}
