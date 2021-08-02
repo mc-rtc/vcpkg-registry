@@ -1,0 +1,9 @@
+{
+  "name": "eigen-quadprog",
+  "version-string": "1.1.1",
+  "homepage": "https://github.com/jrl-umi3218/eigen-quadprog",
+  "description": "QuadProg QP solver through Eigen3 library",
+  "dependencies": [
+    "eigen3"
+  ]
+}
