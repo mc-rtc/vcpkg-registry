@@ -1,0 +1,9 @@
+{
+  "name": "mc-rbdyn-urdf",
+  "version-string": "1.1.0",
+  "homepage": "https://github.com/jrl-umi3218/mc_rbdyn_urdf",
+  "description": "Import URDF models as RBDyn objects",
+  "dependencies": [
+    "rbdyn"
+  ]
+}
