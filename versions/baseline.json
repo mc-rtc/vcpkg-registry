@@ -3,6 +3,7 @@
   {
     "eigen-qld": { "baseline": "1.2.1", "port-version": 0 },
     "rbdyn": { "baseline": "1.5.1", "port-version": 1 },
+    "sch-core": { "baseline": "1.2.0", "port-version": 0 },
     "spacevecalg": { "baseline": "1.2.0", "port-version": 0 }
   }
 }
