@@ -95,7 +95,7 @@ jobs:
               "kind": "git",
               "baseline": "${{ github.sha }}",
               "repository": "${GITHUB_WORKSPACE}",
-              "packages": [ "spacevecalg", "rbdyn", "eigen-qld", "sch-core", "tasks", "mc-rbdyn-urdf", "mc-rtc-data", "eigen-quadprog", "state-observation", "hpp-spline" ]
+              "packages": [ "spacevecalg", "rbdyn", "eigen-qld", "sch-core", "tasks", "mc-rbdyn-urdf", "mc-rtc-data", "eigen-quadprog", "state-observation", "hpp-spline", "mc-rtc" ]
             }
           ]
         }
@@ -116,6 +116,8 @@ jobs:
         ./vcpkg/vcpkg install --feature-flags=registries --debug mc-rtc-data
         echo "JRL_PORT=hpp-spline" >> $GITHUB_ENV
         ./vcpkg/vcpkg install --feature-flags=registries --debug hpp-spline
+        echo "JRL_PORT=mc-rtc" >> $GITHUB_ENV
+        ./vcpkg/vcpkg install --feature-flags=registries --debug mc-rtc
         rm -rf $VCPKG_ROOT/buildtrees
         rm -rf $VCPKG_ROOT/packages
         rm -rf $VCPKG_ROOT/downloads
