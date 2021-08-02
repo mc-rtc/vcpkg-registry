@@ -1,13 +1,13 @@
 vcpkg_download_distfile(ARCHIVE
-    URLS "https://github.com/jrl-umi3218/RBDyn/releases/download/v1.4.0/RBDyn-v1.4.0.tar.gz"
-    FILENAME "RBDyn-v1.4.0.tar.gz"
-    SHA512 cb6bf1e810ff12627a80862406d394f7834fb9ec4fe74f1b56a329a501d84df2c182b926b35c71b51e8478c41d06d7e78d351f7922d7cd01866299ba99800fe6
+    URLS "https://github.com/jrl-umi3218/RBDyn/releases/download/v1.5.1/RBDyn-v1.5.1.tar.gz"
+    FILENAME "RBDyn-v1.5.1.tar.gz"
+    SHA512 a72b0c7e4fa9e891ad62ff31958a67be5ca3fe13470dba07945513b863bf6d1a6d581bd7d6bb362dd5b50dad3fd1f1b5b2d7f0a6401535a50b8f266f5dad5897
 )
 
 vcpkg_extract_source_archive_ex(
     OUT_SOURCE_PATH SOURCE_PATH
     ARCHIVE ${ARCHIVE}
-    REF 1.4.0
+    REF 1.5.1
 )
 
 vcpkg_configure_cmake(
