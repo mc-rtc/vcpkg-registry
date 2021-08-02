@@ -1,0 +1,91 @@
+name: Build mc-rtc ports
+
+on:
+  push:
+    branches:
+      - '**'
+
+jobs:
+  build-packages:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-18.04, ubuntu-20.04, macos-latest]
+    runs-on: ${{ matrix.os }}
+    env:
+      VCPKG_ROOT: ${{ github.workspace }}/vcpkg
+    steps:
+    - uses: actions/checkout@v2
+    - name: Remove default installation
+      shell: bash
+      run: |
+        rm -rf "$VCPKG_INSTALLATION_ROOT" || sudo rm -rf "$VCPKG_INSTALLATION_ROOT" || true
+    - name: Restore cache
+      uses: actions/cache@v2
+      with:
+        path: |
+          ${{ env.VCPKG_ROOT }}
+          !${{ env.VCPKG_ROOT }}/buildtrees
+          !${{ env.VCPKG_ROOT }}/packages
+          !${{ env.VCPKG_ROOT }}/downloads
+        key: |
+          vcpkg-${{ matrix.os }}-${{ github.sha }}
+        restore-keys: |
+          vcpkg-${{ matrix.os }}-
+    - name: Clone vcpkg
+      shell: bash
+      run: |
+        git clone --recursive https://github.com/microsoft/vcpkg || true
+        cd vcpkg && git pull
+    - name: Bootstrap vcpkg (Windows)
+      if: startsWith(runner.os, 'Windows')
+      run: |
+        cd vcpkg
+        .\bootstrap-vcpkg.bat
+        echo "VCPKG_DEFAULT_TRIPLET=x64-windows" >> $GITHUB_ENV
+    - name: Bootstrap vcpkg (Linux)
+      if: startsWith(runner.os, 'Linux')
+      run: |
+        export CXX=g++ # Enforce default g++ selection
+        sudo apt-get install -y python3-setuptools
+        cd vcpkg
+        ./bootstrap-vcpkg.sh
+    - name: Bootstrap vcpkg (macOS)
+      if: startsWith(runner.os, 'macOS')
+      run: |
+        brew install gfortran
+        cd vcpkg
+        ./bootstrap-vcpkg.sh -allowAppleClang
+    - name: Setup vcpkg-configuration.json
+      shell: bash
+      run: |
+        cat <<EOF | tee vcpkg/vcpkg-configuration.json
+        {
+          "registries":
+          [
+            {
+              "kind": "git",
+              "baseline": "${{ github.sha }}",
+              "repository": "${{ github.workspace }}",
+              "packages": [ "spacevecalg" ]
+            }
+          ]
+        }
+        EOF
+    - name: Install SpaceVecAlg
+      shell: bash
+      run: |
+        echo "JRL_PORT=spacevecalg" >> $GITHUB_ENV
+        ./vcpkg/vcpkg install --feature-flags=registries --debug spacevecalg
+    - name: Show logs
+      if: failure()
+      shell: bash
+      run: |
+        for f in `ls vcpkg/buildtrees/${JRL_PORT}/*.log`
+        do
+          echo "=========="
+          echo "$f"
+          echo "=========="
+          cat $f
+        done
+
