@@ -103,10 +103,9 @@ jobs:
     - name: Install
       shell: bash
       run: |
-        echo "JRL_PORT=state-observation" >> $GITHUB_ENV
         ./vcpkg/vcpkg remove --outdated --recurse
+        echo "JRL_PORT=state-observation" >> $GITHUB_ENV
         ./vcpkg/vcpkg install --feature-flags=registries --debug state-observation
-        ls -lR vcpkg/installed/x64-windows/include/boost/mpl/aux_/preprocessed/plain
         rm -rf $VCPKG_ROOT/buildtrees
         rm -rf $VCPKG_ROOT/packages
         rm -rf $VCPKG_ROOT/downloads
