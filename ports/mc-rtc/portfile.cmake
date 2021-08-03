@@ -8,6 +8,8 @@ vcpkg_extract_source_archive_ex(
     OUT_SOURCE_PATH SOURCE_PATH
     ARCHIVE ${ARCHIVE}
     REF 1.7.0
+    PATCHES
+      spdlog-sink.patch
 )
 
 vcpkg_configure_cmake(
