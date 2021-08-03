@@ -1,0 +1,9 @@
+{
+  "name": "hpp-spline",
+  "version-string": "4.8.3",
+  "homepage": "https://github.com/humanoid-path-planner/hpp-spline",
+  "description": "A template-based library for creating curves of arbitrary order",
+  "dependencies": [
+    "eigen3"
+  ]
+}
