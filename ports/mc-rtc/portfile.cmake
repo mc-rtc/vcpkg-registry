@@ -10,6 +10,7 @@ vcpkg_extract_source_archive_ex(
     REF 1.7.0
     PATCHES
       spdlog-sink.patch
+      mc-rtc-install-prefix.patch
 )
 
 vcpkg_configure_cmake(
@@ -20,6 +21,7 @@ vcpkg_configure_cmake(
       -DBUILD_TESTING:BOOL=OFF
       -DDISABLE_ROS:BOOL=ON
       -DPYTHON_BINDING:BOOL=OFF
+      -DMC_RTC_INSTALL_PREFIX=${CURRENT_INSTALLED_DIR}
 )
 
 vcpkg_install_cmake()
