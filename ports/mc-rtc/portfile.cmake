@@ -1,13 +1,13 @@
 vcpkg_download_distfile(ARCHIVE
-    URLS "https://github.com/jrl-umi3218/mc_rtc/releases/download/v1.8.0/mc_rtc-v1.8.0.tar.gz"
-    FILENAME "mc_rtc-v1.8.0.tar.gz"
-    SHA512 dba49ebb588edf710a4dadb9a497046451c53ed851431a63831c1b33151d45622ee1db9a47b934c577c44900e66ac91e5eb7fb4d1568da9e89b423b99b66bacd
+    URLS "https://github.com/jrl-umi3218/mc_rtc/releases/download/v1.8.1/mc_rtc-v1.8.1.tar.gz"
+    FILENAME "mc_rtc-v1.8.1.tar.gz"
+    SHA512 d018a53fea5223558ace48128a7d8f86f9d9dc92926e0b66d65db1575e6e3d2e8a403ce8b8fe6e689b7f91d1b63e4f4d305016b47b9afa432468915907397161
 )
 
 vcpkg_extract_source_archive_ex(
     OUT_SOURCE_PATH SOURCE_PATH
     ARCHIVE ${ARCHIVE}
-    REF 1.8.0
+    REF 1.8.1
 )
 
 vcpkg_configure_cmake(
