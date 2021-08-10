@@ -1,16 +1,13 @@
 vcpkg_download_distfile(ARCHIVE
-    URLS "https://github.com/jrl-umi3218/mc_rtc/releases/download/v1.7.0/mc_rtc-v1.7.0.tar.gz"
-    FILENAME "mc_rtc-v1.7.0.tar.gz"
-    SHA512 72f5ccacdb03b329342d2da15f941476b286eec24d863fb62b181b7cfae77beba82fe8fc3e6a263c2422103d129542c082dfb73ba3e7f42004abbf11a5747633
+    URLS "https://github.com/jrl-umi3218/mc_rtc/releases/download/v1.8.0/mc_rtc-v1.8.0.tar.gz"
+    FILENAME "mc_rtc-v1.8.0.tar.gz"
+    SHA512 dba49ebb588edf710a4dadb9a497046451c53ed851431a63831c1b33151d45622ee1db9a47b934c577c44900e66ac91e5eb7fb4d1568da9e89b423b99b66bacd
 )
 
 vcpkg_extract_source_archive_ex(
     OUT_SOURCE_PATH SOURCE_PATH
     ARCHIVE ${ARCHIVE}
-    REF 1.7.0
-    PATCHES
-      spdlog-sink.patch
-      mc-rtc-install-prefix.patch
+    REF 1.8.0
 )
 
 vcpkg_configure_cmake(
