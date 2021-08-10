@@ -16,6 +16,7 @@ vcpkg_configure_cmake(
     NO_CHARSET_FLAG
     OPTIONS
       -DBUILD_TESTING=OFF
+      -DBUILD_STATE_OBSERVATION_TOOLS=OFF
       -DPYTHON_BINDING=OFF
 )
 
