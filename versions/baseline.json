@@ -5,7 +5,7 @@
     "eigen-quadprog": { "baseline": "1.1.1", "port-version": 2 },
     "hpp-spline": { "baseline": "4.8.3", "port-version": 0 },
     "mc-rbdyn-urdf": { "baseline": "1.1.0", "port-version": 0 },
-    "mc-rtc": { "baseline": "1.8.1", "port-version": 0 },
+    "mc-rtc": { "baseline": "1.8.2", "port-version": 0 },
     "mc-rtc-data": { "baseline": "1.0.4", "port-version": 0 },
     "rbdyn": { "baseline": "1.5.2", "port-version": 0 },
     "sch-core": { "baseline": "1.2.0", "port-version": 2 },
