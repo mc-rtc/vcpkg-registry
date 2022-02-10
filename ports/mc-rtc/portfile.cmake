@@ -8,6 +8,8 @@ vcpkg_extract_source_archive_ex(
     OUT_SOURCE_PATH SOURCE_PATH
     ARCHIVE ${ARCHIVE}
     REF 1.9.0
+    PATCHES
+      skip-doxygen-rb-generation.patch
 )
 
 vcpkg_configure_cmake(

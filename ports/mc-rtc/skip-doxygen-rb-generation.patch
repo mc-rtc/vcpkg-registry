@@ -1,0 +1,12 @@
+diff --git a/doc/CMakeLists.txt b/doc/CMakeLists.txt
+index 8d66832a1..f82e5fb96 100644
+--- a/doc/CMakeLists.txt
++++ b/doc/CMakeLists.txt
+@@ -3,7 +3,6 @@
+ #
+
+ set(JSON_DOC_INSTALL ${CMAKE_INSTALL_DOCDIR}/json)
+-configure_file(_plugins/doxygen.rb.in "${CMAKE_CURRENT_SOURCE_DIR}/_plugins/doxygen.rb")
+
+ install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/_data/schemas
+   DESTINATION ${JSON_DOC_INSTALL}
