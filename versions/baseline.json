@@ -10,7 +10,7 @@
     "ndcurves": { "baseline": "1.1.2", "port-version": 0 },
     "rbdyn": { "baseline": "1.5.2", "port-version": 0 },
     "sch-core": { "baseline": "1.2.0", "port-version": 2 },
-    "spacevecalg": { "baseline": "1.2.0", "port-version": 0 },
+    "spacevecalg": { "baseline": "1.2.1", "port-version": 0 },
     "state-observation": { "baseline": "1.4.1", "port-version": 2 },
     "tasks": { "baseline": "1.5.0", "port-version": 0 }
   }
