@@ -1,0 +1,13 @@
+diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
+index 7b71d983f..e3dd7e783 100644
+--- a/src/CMakeLists.txt
++++ b/src/CMakeLists.txt
+@@ -155,7 +155,7 @@ if(NOT Boost_USE_STATIC_LIBS)
+   target_link_libraries(mc_rtc_loader PUBLIC Boost::dynamic_linking)
+ endif()
+ if(NOT MC_RTC_BUILD_STATIC)
+-  target_link_libraries(mc_rtc_loader PUBLIC ${LTDL})
++  target_link_libraries(mc_rtc_loader PUBLIC ${LTDL} ${CMAKE_DL_LIBS})
+ endif()
+ install_mc_rtc_lib(mc_rtc_loader)
+ 

@@ -10,6 +10,7 @@ vcpkg_extract_source_archive_ex(
     REF 1.10.0
     PATCHES
       skip-doxygen-rb-generation.patch
+      force-dl-link.patch
 )
 
 vcpkg_configure_cmake(
