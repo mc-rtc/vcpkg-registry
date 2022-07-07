@@ -1,13 +1,13 @@
 vcpkg_download_distfile(ARCHIVE
-    URLS "https://github.com/jrl-umi3218/Tasks/releases/download/v1.5.0/Tasks-v1.5.0.tar.gz"
-    FILENAME "Tasks-v1.5.0.tar.gz"
-    SHA512 b1869e8a609cc5ae8da5657c3f5b1c5898a5b59279c265c58a0be2c72461a9f2083828235bbbba89f7abaf9549993ceb26e037fdc38198248666613d689a8d66
+    URLS "https://github.com/jrl-umi3218/Tasks/releases/download/v1.7.0/Tasks-v1.7.0.tar.gz"
+    FILENAME "Tasks-v1.7.0.tar.gz"
+    SHA512 f18cdc4c28af65e2bb4d4fed80e8306d92a2ac91c804afddb03fa4eb18db996019e5ff06f9b41210048dcdafd6fa7ef7c5af7b1097e7258c44b0c9b6c73d5de6
 )
 
 vcpkg_extract_source_archive_ex(
     OUT_SOURCE_PATH SOURCE_PATH
     ARCHIVE ${ARCHIVE}
-    REF 1.5.0
+    REF 1.7.0
 )
 
 vcpkg_configure_cmake(
