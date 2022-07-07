@@ -1,13 +1,14 @@
 vcpkg_download_distfile(ARCHIVE
     URLS "https://github.com/loco-3d/ndcurves/releases/download/v1.1.2/ndcurves-1.1.2.tar.gz"
-    FILENAME "ndcurves-1.1.2.tar.gz"
-    SHA512 dd50ac642f8133c9cc19c1191b2393f8286d91be890bf7f090f7b21fde84e2f8c5cf36d0dcfee4596f758959f7421e8bbacdea6d711b107d4c317894562c8a72
+    URLS "https://github.com/loco-3d/ndcurves/releases/download/v1.1.4/ndcurves-1.1.4.tar.gz"
+    FILENAME "ndcurves-1.1.4.tar.gz"
+    SHA512 8667aeaca75c03675d5ca68aab64f2c33e3a4c1c507a19cb3db55b989b6421da981742ae3b0f4669368b6cd58604733b31963f3f8f749dbba1d1ad678fdc45e8
 )
 
 vcpkg_extract_source_archive_ex(
     OUT_SOURCE_PATH SOURCE_PATH
     ARCHIVE ${ARCHIVE}
-    REF 1.1.2
+    REF 1.1.4
 )
 
 vcpkg_configure_cmake(

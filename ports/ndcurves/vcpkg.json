@@ -1,6 +1,6 @@
 {
   "name": "ndcurves",
-  "version-string": "1.1.2",
+  "version-string": "1.1.4",
   "homepage": "https://github.com/loco-3d/ndcurves",
   "description": "A template-based library for creating curves of arbitrary order",
   "dependencies": [
