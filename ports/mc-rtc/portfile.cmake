@@ -1,16 +1,15 @@
 vcpkg_download_distfile(ARCHIVE
-    URLS "https://github.com/jrl-umi3218/mc_rtc/releases/download/v1.10.0/mc_rtc-v1.10.0.tar.gz"
-    FILENAME "mc_rtc-v1.10.0.tar.gz"
-    SHA512 d11d8dfc6ca00af35913f548494867fa06d0d6f82ed9377688ef00386a40617b15a74a90e0911558aa33af36f43a75a7b09e44e1c45167478dfc3bcf306c34c2
+    URLS "https://github.com/jrl-umi3218/mc_rtc/releases/download/v1.11.0/mc_rtc-v1.11.0.tar.gz"
+    FILENAME "mc_rtc-v1.11.0.tar.gz"
+    SHA512 c9239c890959499861d40917bd8ffe15f3f1b093c7998fd34d8804707b433ed2c4de402d0b59c86ad9e83c68bac27a0bf807e46912433f136f56548506363229
 )
 
 vcpkg_extract_source_archive_ex(
     OUT_SOURCE_PATH SOURCE_PATH
     ARCHIVE ${ARCHIVE}
-    REF 1.10.0
+    REF 1.11.0
     PATCHES
       skip-doxygen-rb-generation.patch
-      force-dl-link.patch
 )
 
 vcpkg_configure_cmake(
