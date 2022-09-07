@@ -62,8 +62,6 @@ function(vcpkg_find_fortran_for_subdirectory additional_cmake_args_out)
                         8e27911a2a5884faa95e1c55058ca15f233d432ed8aa607b04a019758aa21f1357bd5de5ce8709fa47f4fbed6eb00fdfd94e7e2d82023bbc1f1653e95f439e0a
                         "https://repo.msys2.org/mingw/i686/mingw-w64-i686-make-4.3-1-any.pkg.tar.xz"
                         68415d44ba68cc9b2def58130df04fb449c07df0788b1d4ba2fcbb48213712bed34fd2f9b401a8617bea3aee95dc35ca1e5d47e081895ec4fc96775dfa57a3f5
-                        "https://repo.msys2.org/mingw/i686/mingw-w64-i686-gcc-libs-10.2.0-3-any.pkg.tar.zst"
-                        a194a3932dcce9c5172b886a3db60598932bb1ab4694066bd7575b948df304293457b38db6dd15cd20a4cb093671d50e2f373f7de5a237f1f65663598931a692
                 )
             elseif(VCPKG_TARGET_ARCHITECTURE STREQUAL "x64")
                 set(MINGW_PATH mingw64)
@@ -104,8 +102,6 @@ function(vcpkg_find_fortran_for_subdirectory additional_cmake_args_out)
                         38ec5ca99c5b955bf8a892a3edaf4e18572977736809b7671c554526b13cb4e53d45c5b83e37e0fb7628483ba98831b3203e3e404dac720d5b2ed95cfe4505c4
                         "https://repo.msys2.org/mingw/x86_64/mingw-w64-x86_64-make-4.3-1-any.pkg.tar.xz"
                         61803a0ecae7995af3b5a8f712ffbde34317044635e54f8b0e6b08227b0b028f34d4e8bcec39b96df12079265a919e63f4a89b6ce025c3dea13e48a3d7375a0a
-                        "https://repo.msys2.org/mingw/x86_64/mingw-w64-x86_64-gcc-libs-10.2.0-3-any.pkg.tar.zst"
-                        b80470c323f46bcfd4a3391f26d54d895669ddd2427e4d75f05652db2f7ecb43d6ec1daf5bf75777220c56656a835977d7bb180d17e444b925d62f3c38532bc8
                 )
             else()
                 message(FATAL_ERROR "Unknown architecture '${VCPKG_TARGET_ARCHITECTURE}' for MinGW Fortran build!")
