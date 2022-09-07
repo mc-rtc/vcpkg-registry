@@ -55,6 +55,10 @@ jobs:
         then
           echo "VCPKG_DEFAULT_TRIPLET=x64-windows" >> $GITHUB_ENV
         fi
+        if ${{ startsWith(runner.os, 'Linux') }}
+        then
+          echo "VCPKG_DEFAULT_TRIPLET=x64-linux-dynamic" >> $GITHUB_ENV
+        fi
     - name: Bootstrap vcpkg (Windows)
       if: startsWith(runner.os, 'Windows')
       shell: bash
