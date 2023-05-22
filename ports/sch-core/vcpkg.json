@@ -1,6 +1,6 @@
 {
   "name": "sch-core",
-  "version-string": "1.3.0",
+  "version-string": "1.4.0",
   "homepage": "https://github.com/jrl-umi3218/sch-core",
   "description": "Efficient implementation of GJK algorithm for proximity queries (collision detection, distance computations, penetration depths and witness points) between convex shapes",
   "dependencies": [
