@@ -47,6 +47,10 @@
     "tasks": {
       "baseline": "1.7.2",
       "port-version": 0
+    },
+    "tvm": {
+      "baseline": "0.9.0",
+      "port-version": 0
     }
   }
 }
