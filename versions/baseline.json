@@ -45,7 +45,7 @@
       "port-version": 0
     },
     "tasks": {
-      "baseline": "1.7.0",
+      "baseline": "1.7.2",
       "port-version": 0
     }
   }

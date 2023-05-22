@@ -1,6 +1,6 @@
 {
   "name": "tasks",
-  "version-string": "1.7.0",
+  "version-string": "1.7.2",
   "homepage": "https://github.com/jrl-umi3218/Tasks",
   "description": "Real time control of robots using constrained optimization",
   "dependencies": [
