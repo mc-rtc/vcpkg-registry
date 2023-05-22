@@ -39,6 +39,7 @@ jobs:
         then
           echo "BOOTSTRAP_VCPKG=true" >> $GITHUB_ENV
           git clone --recursive https://github.com/microsoft/vcpkg || true
+          echo "VCPKG_HEAD=`cd vcpkg && git rev-parse HEAD`" >> $GITHUB_ENV
         else
           cd vcpkg
           old_head=`git rev-parse HEAD`
@@ -50,6 +51,7 @@ jobs:
           else
             echo "BOOTSTRAP_VCPKG=true" >> $GITHUB_ENV
           fi
+          echo "VCPKG_HEAD=${new_head}" >> $GITHUB_ENV
         fi
         if ${{ startsWith(runner.os, 'Windows') }}
         then
@@ -93,13 +95,18 @@ jobs:
         GITHUB_WORKSPACE=$(echo "${{ github.workspace }}" | sed -e's/\\/\\\\/g')
         cat <<EOF | tee vcpkg/vcpkg-configuration.json
         {
+          "default-registry": {
+            "kind": "git",
+            "repository": "https://github.com/Microsoft/vcpkg",
+            "baseline": "${VCPKG_HEAD}"
+          },
           "registries":
           [
             {
               "kind": "git",
               "baseline": "${{ github.sha }}",
               "repository": "${GITHUB_WORKSPACE}",
-              "packages": [ "spacevecalg", "rbdyn", "eigen-qld", "sch-core", "tasks", "mc-rbdyn-urdf", "mc-rtc-data", "eigen-quadprog", "state-observation", "hpp-spline", "ndcurves", "mc-rtc" ]
+              "packages": [ "spacevecalg", "rbdyn", "eigen-qld", "sch-core", "tasks", "mc-rbdyn-urdf", "mc-rtc-data", "eigen-quadprog", "state-observation", "hpp-spline", "ndcurves", "mc-rtc", "tvm" ]
             }
           ]
         }
@@ -108,20 +115,6 @@ jobs:
       shell: bash
       run: |
         ./vcpkg/vcpkg remove --outdated --recurse
-        echo "JRL_PORT=state-observation" >> $GITHUB_ENV
-        ./vcpkg/vcpkg install --feature-flags=registries --debug state-observation
-        echo "JRL_PORT=tasks" >> $GITHUB_ENV
-        ./vcpkg/vcpkg install --feature-flags=registries --debug tasks
-        echo "JRL_PORT=eigen-quadprog" >> $GITHUB_ENV
-        ./vcpkg/vcpkg install --feature-flags=registries --debug eigen-quadprog
-        echo "JRL_PORT=mc-rbdyn-urdf" >> $GITHUB_ENV
-        ./vcpkg/vcpkg install --feature-flags=registries --debug mc-rbdyn-urdf
-        echo "JRL_PORT=mc-rtc-data" >> $GITHUB_ENV
-        ./vcpkg/vcpkg install --feature-flags=registries --debug mc-rtc-data
-        echo "JRL_PORT=hpp-spline" >> $GITHUB_ENV
-        ./vcpkg/vcpkg install --feature-flags=registries --debug hpp-spline
-        echo "JRL_PORT=ndcurves" >> $GITHUB_ENV
-        ./vcpkg/vcpkg install --feature-flags=registries --debug ndcurves
         echo "JRL_PORT=tvm" >> $GITHUB_ENV
         ./vcpkg/vcpkg install --feature-flags=registries --debug tvm
         echo "JRL_PORT=mc-rtc" >> $GITHUB_ENV
