@@ -1,13 +1,13 @@
 vcpkg_download_distfile(ARCHIVE
-    URLS "https://github.com/jrl-umi3218/SpaceVecAlg/releases/download/v1.2.1/SpaceVecAlg-v1.2.1.tar.gz"
-    FILENAME "SpaceVecAlg-v1.2.1.tar.gz"
-    SHA512 02baa547c88929eaf8cbce42c4e1edcc605bb9a3e99f9257fcc6e4e46646442ced280694907c8ef6825437f298b75acfa80806b549df727aa6a94d656d34ac8e
+    URLS "https://github.com/jrl-umi3218/SpaceVecAlg/releases/download/v1.2.4/SpaceVecAlg-v1.2.4.tar.gz"
+    FILENAME "SpaceVecAlg-v1.2.4.tar.gz"
+    SHA512 5cd16be6f69f3e271792cb802a12b48ce59bea7708fc861db751e4b21c6131a3d6185732208efb8e6e9a3f6c2e69f9f40c6684b1fb5b96c276f321a4edadf0d5
 )
 
 vcpkg_extract_source_archive_ex(
     OUT_SOURCE_PATH SOURCE_PATH
     ARCHIVE ${ARCHIVE}
-    REF 1.2.1
+    REF 1.2.4
 )
 
 vcpkg_configure_cmake(

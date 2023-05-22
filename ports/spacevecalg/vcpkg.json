@@ -1,7 +1,9 @@
 {
   "name": "spacevecalg",
-  "version-string": "1.2.1",
+  "version-string": "1.2.4",
   "homepage": "https://github.com/jrl-umi3218/SpaceVecAlg",
   "description": "Implementation of spatial vector algebra with the Eigen3 linear algebra library",
-  "dependencies": ["eigen3"]
+  "dependencies": [
+    "eigen3"
+  ]
 }
