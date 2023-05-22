@@ -10,7 +10,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [windows-latest, ubuntu-18.04, ubuntu-20.04, macos-latest]
+        os: [windows-latest, ubuntu-20.04, macos-latest]
     runs-on: ${{ matrix.os }}
     env:
       VCPKG_ROOT: ${{ github.workspace }}/vcpkg
@@ -122,6 +122,8 @@ jobs:
         ./vcpkg/vcpkg install --feature-flags=registries --debug hpp-spline
         echo "JRL_PORT=ndcurves" >> $GITHUB_ENV
         ./vcpkg/vcpkg install --feature-flags=registries --debug ndcurves
+        echo "JRL_PORT=tvm" >> $GITHUB_ENV
+        ./vcpkg/vcpkg install --feature-flags=registries --debug tvm
         echo "JRL_PORT=mc-rtc" >> $GITHUB_ENV
         ./vcpkg/vcpkg install --feature-flags=registries --debug mc-rtc
         rm -rf $VCPKG_ROOT/buildtrees
