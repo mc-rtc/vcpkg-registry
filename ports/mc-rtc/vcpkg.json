@@ -1,6 +1,6 @@
 {
   "name": "mc-rtc",
-  "version-string": "2.4.0",
+  "version-string": "2.5.0",
   "homepage": "https://github.com/jrl-umi3218/mc_rtc",
   "description": "mc_rtc is an interface for simulated and real robotic systems suitable for real-time control.  It provides programmers with a simple interface to build versatile controllers as well as a set of tools to help with the development of said controllers",
   "dependencies": [
