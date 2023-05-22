@@ -1,13 +1,13 @@
 vcpkg_download_distfile(ARCHIVE
-    URLS "https://github.com/jrl-umi3218/mc_rtc/releases/download/v1.12.0/mc_rtc-v1.12.0.tar.gz"
-    FILENAME "mc_rtc-v1.12.0.tar.gz"
-    SHA512 809d491deefdc9a19b9a23d0d32367d4ab22143d58a57bab447b6088b915191e97ce0bad7006ef3c2936df0262573d487ccc4a54156e7cc2b75707c3aa68195d
+    URLS "https://github.com/jrl-umi3218/mc_rtc/releases/download/v2.4.0/mc_rtc-v2.4.0.tar.gz"
+    FILENAME "mc_rtc-v2.4.0.tar.gz"
+    SHA512 6d7d1099d636550b06a02b753d15b14ced98aa2e1af73fe8d2bfe4957cd1f6321440f78e3e60ed21eb20c56ebe27ec6b46af58bf250ed964ca49ad76b1097b49
 )
 
 vcpkg_extract_source_archive_ex(
     OUT_SOURCE_PATH SOURCE_PATH
     ARCHIVE ${ARCHIVE}
-    REF 1.12.0
+    REF 2.4.0
     PATCHES
       skip-doxygen-rb-generation.patch
 )
@@ -21,6 +21,7 @@ vcpkg_configure_cmake(
       -DDISABLE_ROS:BOOL=ON
       -DPYTHON_BINDING:BOOL=OFF
       -DMC_RTC_INSTALL_PREFIX=${CURRENT_INSTALLED_DIR}
+      -DMC_RTC_LOADER_DEBUG_SUFFIX=debug
 )
 
 vcpkg_install_cmake()
@@ -38,6 +39,7 @@ set(MC_RTC_TOOLS
   mc_bin_utils
   mc_json_to_yaml
   mc_old_bin_to_flat
+  mc_rtc_ticker
 )
 
 set(MC_RTC_PYTHON_TOOLS
