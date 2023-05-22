@@ -10,15 +10,15 @@ set(MINGW_BIN "${vcpkg_find_fortran_for_subdirectory_MSYS_ROOT}/${MINGW_PATH}/bi
 set(MINGW_GFORTRAN "${MINGW_BIN}/gfortran.exe")
 
 vcpkg_download_distfile(ARCHIVE
-    URLS "https://github.com/jrl-umi3218/eigen-qld/releases/download/v1.2.1/eigen-qld-v1.2.1.tar.gz"
-    FILENAME "eigen-qld-v1.2.1.tar.gz"
-    SHA512 bef56ae88a457d9bc602d50780dcf283f972cbcd13f409207e9be85354523f1d7dcc7bdc32893d21d5c7ede0d0c699a341c16d5e9ac789c0108cf00dfa3ab0fb
+    URLS "https://github.com/jrl-umi3218/eigen-qld/releases/download/v1.2.3/eigen-qld-v1.2.3.tar.gz"
+    FILENAME "eigen-qld-v1.2.3.tar.gz"
+    SHA512 71857ea99621cf644cde5bc8b243e3f1a5ac4a819ec6f513b71f9cfb893f6f7a85ea7f0dd9dd2c46c5bcd7edd3ff305e3499ac860f6021ca02a7580cbf36366e
 )
 
 vcpkg_extract_source_archive_ex(
     OUT_SOURCE_PATH SOURCE_PATH
     ARCHIVE ${ARCHIVE}
-    REF 1.2.1
+    REF 1.2.3
     PATCHES
       fix-qld_fortran-import.patch
 )
