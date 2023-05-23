@@ -22,7 +22,7 @@
     },
     "mc-rtc": {
       "baseline": "2.5.0",
-      "port-version": 1
+      "port-version": 2
     },
     "mc-rtc-data": {
       "baseline": "1.0.6",
