@@ -12,6 +12,10 @@
       "baseline": "4.8.3",
       "port-version": 0
     },
+    "libnotify": {
+      "baseline": "0.8.2",
+      "port-version": 0
+    },
     "mc-rbdyn-urdf": {
       "baseline": "1.1.0",
       "port-version": 0

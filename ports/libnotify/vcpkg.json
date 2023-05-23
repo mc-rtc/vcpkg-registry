@@ -1,0 +1,14 @@
+{
+  "name": "libnotify",
+  "version-semver": "0.8.2",
+  "homepage": "https://gnome.pages.gitlab.gnome.org/libnotify/",
+  "description": "Send desktop notifications",
+  "supports": "!windows",
+  "dependencies": [
+    "gdk-pixbuf",
+    {
+      "name": "vcpkg-tool-meson",
+      "host": true
+    }
+  ]
+}
