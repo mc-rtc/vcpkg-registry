@@ -106,7 +106,7 @@ jobs:
               "kind": "git",
               "baseline": "${{ github.sha }}",
               "repository": "${GITHUB_WORKSPACE}",
-              "packages": [ "spacevecalg", "rbdyn", "eigen-qld", "sch-core", "tasks", "mc-rbdyn-urdf", "mc-rtc-data", "eigen-quadprog", "state-observation", "hpp-spline", "ndcurves", "mc-rtc", "tvm" ]
+              "packages": [ "spacevecalg", "rbdyn", "eigen-qld", "sch-core", "tasks", "mc-rbdyn-urdf", "mc-rtc-data", "eigen-quadprog", "state-observation", "hpp-spline", "ndcurves", "mc-rtc", "tvm", "libnotify" ]
             }
           ]
         }
