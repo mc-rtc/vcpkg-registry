@@ -1,13 +1,13 @@
 vcpkg_download_distfile(ARCHIVE
-    URLS "https://github.com/jrl-umi3218/sch-core/releases/download/v1.4.0/sch-core-v1.4.0.tar.gz"
-    FILENAME "sch-core-v1.4.0.tar.gz"
-    SHA512 97d4fc436d065a86944f3dd9e4c0f2bdad2a332c5dfd59ab19ea529577f4a80255b78b395ca1f0b08f8b37a92db6b4e29de3ec47f928ead685f66b851898057c
+    URLS "https://github.com/jrl-umi3218/sch-core/releases/download/v1.4.1/sch-core-v1.4.1.tar.gz"
+    FILENAME "sch-core-v1.4.1.tar.gz"
+    SHA512 a8da81692066c0c990f590db324ee2763f5cda65469791247a7772385cf007ec2ca61c6d910feb0bbbc07f49bbe4156495e41f5764c4c896210f7c5060e98a50
 )
 
 vcpkg_extract_source_archive_ex(
     OUT_SOURCE_PATH SOURCE_PATH
     ARCHIVE ${ARCHIVE}
-    REF 1.4.0
+    REF 1.4.1
 )
 
 vcpkg_configure_cmake(
