@@ -1,6 +1,6 @@
 {
   "name": "tvm",
-  "version-string": "0.9.0",
+  "version-string": "0.9.1",
   "homepage": "https://github.com/jrl-umi3218/tvm",
   "description": "A framework for writing and solving optimization problem, with an emphasis on robotic control",
   "dependencies": [
