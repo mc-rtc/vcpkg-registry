@@ -27,14 +27,14 @@ versions_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../versi
 repos_to_ports = {
     "jrl-umi3218/eigen-qld": "eigen-qld",
     'jrl-umi3218/eigen-quadprog': 'eigen-quadprog',
-    'jrl-umi3218/mc_rtc_data': 'mc-rtc-data',
-    'jrl-umi3218/mc_rtc': 'mc-rtc',
+    'jrl-umi3218/SpaceVecAlg': 'spacevecalg',
     'jrl-umi3218/RBDyn': 'rbdyn',
     'jrl-umi3218/sch-core': 'sch-core',
-    'jrl-umi3218/SpaceVecAlg': 'spacevecalg',
-    'jrl-umi3218/state-observation': 'state-observation',
     'jrl-umi3218/Tasks': 'tasks',
     'jrl-umi3218/tvm': 'tvm',
+    'jrl-umi3218/mc_rtc_data': 'mc-rtc-data',
+    'jrl-umi3218/state-observation': 'state-observation',
+    'jrl-umi3218/mc_rtc': 'mc-rtc',
 }
 
 g = Github(sys.argv[1])
