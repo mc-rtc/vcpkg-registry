@@ -1,6 +1,6 @@
 {
   "name": "eigen-qld",
-  "version-string": "1.2.3",
+  "version-string": "1.2.4",
   "port-version": 0,
   "homepage": "https://github.com/jrl-umi3218/eigen-qld",
   "description": "QLD QP solver through Eigen3 library",
