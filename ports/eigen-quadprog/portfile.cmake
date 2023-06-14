@@ -10,15 +10,15 @@ set(MINGW_BIN "${vcpkg_find_fortran_for_subdirectory_MSYS_ROOT}/${MINGW_PATH}/bi
 set(MINGW_GFORTRAN "${MINGW_BIN}/gfortran.exe")
 
 vcpkg_download_distfile(ARCHIVE
-    URLS "https://github.com/jrl-umi3218/eigen-quadprog/releases/download/v1.1.1/eigen-quadprog-v1.1.1.tar.gz"
-    FILENAME "eigen-quadprog-v1.1.1.tar.gz"
-    SHA512 e1240ad9476de53734ee0d8a64e16a4306e5a71042a1da94c6803fa835dca1593a42bc39ab5058779a2b467302646b2c5304137c8ea0b025d02b5ae0bc2a7d44
+    URLS "https://github.com/jrl-umi3218/eigen-quadprog/releases/download/v1.1.2/eigen-quadprog-v1.1.2.tar.gz"
+    FILENAME "eigen-quadprog-v1.1.2.tar.gz"
+    SHA512 42e9f447f0f334c9975947ce7687138ab0dae059335dfd14702affbf64095db7c6415306ccaad25765d4e6a418daf615d2c8d2dd17c7afaf5e9ab5b1d4da70af
 )
 
 vcpkg_extract_source_archive_ex(
     OUT_SOURCE_PATH SOURCE_PATH
     ARCHIVE ${ARCHIVE}
-    REF 1.1.1
+    REF 1.1.2
     PATCHES
       fix-quadprog_fortran-import.patch
 )
