@@ -1,13 +1,13 @@
 vcpkg_download_distfile(ARCHIVE
-    URLS "https://github.com/jrl-umi3218/tvm/releases/download/v0.9.1/tvm-v0.9.1.tar.gz"
-    FILENAME "tvm-v0.9.1.tar.gz"
-    SHA512 d9b2e50fd4e1c491db3fb26e273ce0e74c5c247afdf4611d5adcfc8ed082d2480c8e6ad6776cb53a5989c618d735431ada3370f4a29ae722107daee47938b16a
+    URLS "https://github.com/jrl-umi3218/tvm/releases/download/v0.9.2/tvm-v0.9.2.tar.gz"
+    FILENAME "tvm-v0.9.2.tar.gz"
+    SHA512 7796a521c897ef3685dc330ded7141028bfe8619eade6df5149c527254a248a4caa148028c6ec58d1b6b41f27b6ddfe1b4e9d7d9a99aa33da0ee8c2700536bd5
 )
 
 vcpkg_extract_source_archive_ex(
     OUT_SOURCE_PATH SOURCE_PATH
     ARCHIVE ${ARCHIVE}
-    REF 0.9.1
+    REF 0.9.2
 )
 
 vcpkg_configure_cmake(
