@@ -1,13 +1,13 @@
 vcpkg_download_distfile(ARCHIVE
-    URLS "https://github.com/jrl-umi3218/mc_rtc/releases/download/v2.7.0/mc_rtc-v2.7.0.tar.gz"
-    FILENAME "mc_rtc-v2.7.0.tar.gz"
-    SHA512 ec1f657b7eb6c4e4dd28935221d0dbc8240a172af260997e0d960a9804d5d58f6c5fe477f8905392896b05adbf3008e4bb2939998935331aee081d8fd21b65cc
+    URLS "https://github.com/jrl-umi3218/mc_rtc/releases/download/v2.9.2/mc_rtc-v2.9.2.tar.gz"
+    FILENAME "mc_rtc-v2.9.2.tar.gz"
+    SHA512 32f2aa14803a6d4952f5f1880ea1b5e063bd761f12e2b6e247cd9cb7be250eccee877b1ad3eee47e6868b88f93e3ea71bfd45fd34d57322db89b704fa185ee9f
 )
 
 vcpkg_extract_source_archive_ex(
     OUT_SOURCE_PATH SOURCE_PATH
     ARCHIVE ${ARCHIVE}
-    REF 2.7.0
+    REF 2.9.2
     PATCHES
       skip-doxygen-rb-generation.patch
 )
