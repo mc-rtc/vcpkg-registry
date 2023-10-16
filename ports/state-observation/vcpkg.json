@@ -1,6 +1,6 @@
 {
   "name": "state-observation",
-  "version-string": "1.5.2",
+  "version-string": "1.5.3",
   "port-version": 0,
   "homepage": "https://github.com/jrl-umi3218/state-observation",
   "description": "Describes interfaces for state observers, and implements some observers",

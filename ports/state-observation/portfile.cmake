@@ -1,13 +1,13 @@
 vcpkg_download_distfile(ARCHIVE
-    URLS "https://github.com/jrl-umi3218/state-observation/releases/download/v1.5.2/state-observation-v1.5.2.tar.gz"
-    FILENAME "state-observation-v1.5.2.tar.gz"
-    SHA512 c3351a838d1ffe1569238a769c2c3c0c43e27fd56bb50d114e0d03ec2f4da7b46e325fc7c9f6c191136dfba8a0d6ed78014e341fd166cf6f3a8832b11271e0c7
+    URLS "https://github.com/jrl-umi3218/state-observation/releases/download/v1.5.3/state-observation-v1.5.3.tar.gz"
+    FILENAME "state-observation-v1.5.3.tar.gz"
+    SHA512 be9d9d71f483eee1052b5dc86dddf767c0319fb10b10d3df193a7be44e6602dd58d009ff7053dee2eae61b81712649d4a6b5485fb628c87817d328990bdae086
 )
 
 vcpkg_extract_source_archive_ex(
     OUT_SOURCE_PATH SOURCE_PATH
     ARCHIVE ${ARCHIVE}
-    REF 1.5.2
+    REF 1.5.3
 )
 
 vcpkg_configure_cmake(
